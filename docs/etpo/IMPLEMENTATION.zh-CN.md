@@ -82,10 +82,10 @@ SFT 子集补齐到 worker world size 的倍数，补齐行监督 mask 为零。
 | 环境 | 初始内容 | 来源 |
 | --- | --- | --- |
 | ALFWorld | general + 按任务类型选择的 specific skill | SkillZero，提交 `1980cd589036ec9f04c64749bbd317a8dd0eef7a` |
-| WebShop | 搜索、筛选、产品属性核对和购买动作通用指导 | 本次为 ETPO 编写 |
-| ScienceWorld | 观察、导航、实验操作和目标核对通用指导 | 本次为 ETPO 编写 |
+| WebShop | 15 条通用购物策略，原文复制 | SDAR |
+| ScienceWorld | 从 8 个技能整理的通用操作流程 | SkillNet，经 ETPO 适配 |
 
-SkillZero 原始参考不提供此处的 WebShop/ScienceWorld skill，不将自编内容表述为其产物。ALFWorld 补充了 `pick_and_place_simple` 映射别名；未知类型回退到 general。来源与许可证见 `skills/SOURCES.md`、`skills/LICENSE.SkillZero` 和 `NOTICE`。
+SkillZero 原始参考不提供此处的 WebShop/ScienceWorld skill。它们现已分别改用 SDAR 原文和 SkillNet 适配版本，来源及改动见 [替换说明](SKILL-REPLACEMENT.zh-CN.md)。ALFWorld 补充了 `pick_and_place_simple` 映射别名；未知类型回退到 general。来源与许可证见 `skills/SOURCES.md`、`skills/LICENSE.SkillZero` 和 `NOTICE`。
 
 每次运行在 `trainer.default_local_dir/etpo_initial_skills.json` 保存文本、映射及 SHA-256。改 skill 做新实验时使用新输出目录。成功轨迹可能仍包含多余动作，此版本不会自动提炼或改写 skill 文本。
 

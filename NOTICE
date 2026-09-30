@@ -16,3 +16,9 @@ under Apache-2.0; see skills/SOURCES.md and skills/LICENSE.SkillZero.
 ETPO's Sokoban adapter uses gym-sokoban 0.0.6 (MIT), copyright 2018
 Max-Philipp Schrader. Its generated level split is verified offline; see
 skills/LICENSE.gym-sokoban and data/groups/README.sokoban.md.
+
+WebShop general skill text is reproduced from SDAR (ZJU-REAL/SDAR), Apache-2.0;
+see skills/LICENSE.SDAR and skills/provenance.json.
+ScienceWorld skill procedures are adapted from SkillNet, copyright (c) 2026
+ZJUNLP, MIT; originals and modifications are identified in skills/SOURCES.md,
+skills/provenance.json, and skills/LICENSE.SkillNet.

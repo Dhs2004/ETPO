@@ -7,7 +7,7 @@
 - 环境：[mpSchrader/gym-sokoban](https://github.com/mpSchrader/gym-sokoban)，MIT。
 - 初始技能：`skills/sokoban/general_skills.md`，为 ETPO 独立编写的 10 条通用解题规则，包括不可逆推箱检查、非目标角落死锁、墙边陷阱、玩家站位、通道推箱顺序、多箱目标分配。
 - 检索到了公开的 `sokoban-benchmark-player` skill，但其流程依赖 undo/reset 和结果文件输出，且未发现仓库许可证，因此未复制其文本。当前 skill 不是 SkillZero/SDAR/AgentOPSD 发布的原始技能。
-- WebShop、ScienceWorld 的其他现成来源调查见 [来源核查](SKILL-SOURCE-AUDIT.zh-CN.md)。它们的 ETPO 默认 skill 本次未替换。
+- WebShop、ScienceWorld 的其他现成来源调查见 [来源核查](SKILL-SOURCE-AUDIT.zh-CN.md)。它们的 ETPO 默认 skill 后续已替换，见 [替换说明](SKILL-REPLACEMENT.zh-CN.md)。
 
 ## 交互与奖励
 

@@ -18,7 +18,7 @@ WANDB_MODE=offline bash examples/etpo/train.sh alfworld
 bash examples/etpo/train.sh alfworld --cfg job
 ```
 
-ALFWorld 初始 skills 来自 SkillZero；WebShop、ScienceWorld 的通用 skills 为本项目编写。见 [来源](skills/SOURCES.md)。
+ALFWorld 初始 skills 来自 SkillZero；WebShop 使用 SDAR 通用 skill 原文，ScienceWorld 使用从 SkillNet 8 个技能适配的通用流程。见 [来源](skills/SOURCES.md)。
 
 完整设计、损失公式、更新顺序、成功筛选、参数、消融与运行说明见 [ETPO 实现文档](docs/etpo/IMPLEMENTATION.zh-CN.md)。
 
@@ -34,3 +34,5 @@ torchrun --standalone --nnodes=1 --nproc_per_node=2 tests/etpo/distributed_sft_s
 配置入口：`verl/trainer/config/ppo_trainer.yaml`；路径示例：`setup/paths.example.sh`；依赖约束及版本快照：`setup/`；可随仓库查看的 [验证记录](docs/etpo/verification/verification.json)。模型、数据、环境目录和运行日志不上传。
 
 Sokoban 已接入同一训练入口：`bash examples/etpo/train.sh sokoban`。附带 192 个训练关卡、32 个验证关卡及教师初始技能；见 [Sokoban 使用说明](docs/etpo/SOKOBAN.zh-CN.md) 和 [其他项目 skill 来源核查](docs/etpo/SKILL-SOURCE-AUDIT.zh-CN.md)。
+
+WebShop / ScienceWorld 默认技能已替换；详见 [替换说明及来源映射](docs/etpo/SKILL-REPLACEMENT.zh-CN.md)。

@@ -1,6 +1,6 @@
 # WebShop / ScienceWorld 初始 skill 来源核查
 
-核查日期：2026-09-30。仅调查公开源码和技能资产，本次未替换 ETPO 的训练 skills。
+核查日期：2026-09-30。本文记录公开源码和技能资产调查。后续已按用户要求替换 ETPO 默认 WebShop/ScienceWorld skills，见 [替换说明](SKILL-REPLACEMENT.zh-CN.md)。
 
 | 项目 | 核查提交 | WebShop | ScienceWorld |
 | --- | --- | --- | --- |

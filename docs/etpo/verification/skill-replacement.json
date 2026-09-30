@@ -1,0 +1,33 @@
+{
+  "model": "Qwen3-4B local tokenizer",
+  "max_skill_tokens": 2048,
+  "sources_and_hashes_verified": true,
+  "environments": {
+    "webshop": {
+      "skill_tokens": 764,
+      "teacher_prompt_tokens": 809,
+      "source_commit": "308153bb5f7d63cd57f301f432d616a072220e1b",
+      "general_skill_loaded": true,
+      "response_tokens_unchanged": true,
+      "snapshot_matches": true
+    },
+    "sciworld": {
+      "skill_tokens": 882,
+      "teacher_prompt_tokens": 927,
+      "source_commit": "358ec824577e8a5aa6857c0eff268e492703606b",
+      "general_skill_loaded": true,
+      "response_tokens_unchanged": true,
+      "snapshot_matches": true
+    }
+  },
+  "gpu_training": "not run; skill replacement validation only",
+  "targeted_regression_tests": {
+    "count": 3,
+    "status": "passed",
+    "checks": [
+      "skill loading and alias",
+      "snapshot resume guard",
+      "real collector and teacher context"
+    ]
+  }
+}

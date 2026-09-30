@@ -1,0 +1,77 @@
+{
+  "webshop": {
+    "repository": "https://github.com/ZJU-REAL/SDAR",
+    "commit": "308153bb5f7d63cd57f301f432d616a072220e1b",
+    "path": "skills/webshop/general_skills.md",
+    "license": "Apache-2.0",
+    "adaptation": "verbatim general skill; no category skills added",
+    "runtime_file": "webshop/general_skills.md",
+    "sha256": "83f5bfca6d1012cce6c703475556d854fa833f03ce6083fa9d3bcc9c10b5fc80"
+  },
+  "sciworld": {
+    "repository": "https://github.com/zjunlp/SkillNet",
+    "commit": "358ec824577e8a5aa6857c0eff268e492703606b",
+    "license": "MIT",
+    "adaptation": "Eight general procedures condensed and adapted to observed actions, task constraints and ETPO action tags; task-specific examples, fixed outcomes and external script calls omitted.",
+    "runtime_file": "sciworld/general_skills.md",
+    "sha256": "0b93af95a135fed661967a91dfa34617286f7aaa7c51fa62272d5f46ce786b85",
+    "sources": [
+      {
+        "section": 1,
+        "path": "experiments/src/skills/scienceworld/scienceworld-task-parser/SKILL.md",
+        "url": "https://github.com/zjunlp/SkillNet/blob/358ec824577e8a5aa6857c0eff268e492703606b/experiments/src/skills/scienceworld/scienceworld-task-parser/SKILL.md",
+        "vendored_original": "sources/skillnet/scienceworld/task-parser.md",
+        "sha256": "8577631125aaf5d68f1c9a4b70dfb2cc804fd78c3f02cbe3001f406d081f704b"
+      },
+      {
+        "section": 2,
+        "path": "experiments/src/skills/scienceworld/scienceworld-room-scanner/SKILL.md",
+        "url": "https://github.com/zjunlp/SkillNet/blob/358ec824577e8a5aa6857c0eff268e492703606b/experiments/src/skills/scienceworld/scienceworld-room-scanner/SKILL.md",
+        "vendored_original": "sources/skillnet/scienceworld/room-scanner.md",
+        "sha256": "a198b55884c1c1352fd3d5eb9ed6d955134a15779657b07b7549b672f7381b90"
+      },
+      {
+        "section": 3,
+        "path": "experiments/src/skills/scienceworld/scienceworld-inventory-manager/SKILL.md",
+        "url": "https://github.com/zjunlp/SkillNet/blob/358ec824577e8a5aa6857c0eff268e492703606b/experiments/src/skills/scienceworld/scienceworld-inventory-manager/SKILL.md",
+        "vendored_original": "sources/skillnet/scienceworld/inventory-manager.md",
+        "sha256": "5fb607fc6029a8f61d0a54e6810c808d0869119a96881903d96099b8355859d9"
+      },
+      {
+        "section": 4,
+        "path": "experiments/src/skills/scienceworld/scienceworld-container-inspector/SKILL.md",
+        "url": "https://github.com/zjunlp/SkillNet/blob/358ec824577e8a5aa6857c0eff268e492703606b/experiments/src/skills/scienceworld/scienceworld-container-inspector/SKILL.md",
+        "vendored_original": "sources/skillnet/scienceworld/container-inspector.md",
+        "sha256": "f285ba6b841351c87c8b5bafd367f9aeca5b4e585046165f356c558fc94995bd"
+      },
+      {
+        "section": 5,
+        "path": "experiments/src/skills/scienceworld/scienceworld-tool-user/SKILL.md",
+        "url": "https://github.com/zjunlp/SkillNet/blob/358ec824577e8a5aa6857c0eff268e492703606b/experiments/src/skills/scienceworld/scienceworld-tool-user/SKILL.md",
+        "vendored_original": "sources/skillnet/scienceworld/tool-user.md",
+        "sha256": "b0402aa357cc79bd9c7c41fe2d220694d964952c1eb88a8e2e707cc6b78ad8f0"
+      },
+      {
+        "section": 6,
+        "path": "experiments/src/skills/scienceworld/scienceworld-temperature-measurer/SKILL.md",
+        "url": "https://github.com/zjunlp/SkillNet/blob/358ec824577e8a5aa6857c0eff268e492703606b/experiments/src/skills/scienceworld/scienceworld-temperature-measurer/SKILL.md",
+        "vendored_original": "sources/skillnet/scienceworld/temperature-measurer.md",
+        "sha256": "23673bb19981b02fac612f941c972474352e294ee8df0afbf14f8a2174559ca9"
+      },
+      {
+        "section": 7,
+        "path": "experiments/src/skills/scienceworld/scienceworld-ambiguous-action-resolution/SKILL.md",
+        "url": "https://github.com/zjunlp/SkillNet/blob/358ec824577e8a5aa6857c0eff268e492703606b/experiments/src/skills/scienceworld/scienceworld-ambiguous-action-resolution/SKILL.md",
+        "vendored_original": "sources/skillnet/scienceworld/ambiguous-action-resolution.md",
+        "sha256": "f29fd8112e47629104f55e7f4f692267f1e9f9c0dc7c4f086cab10fed97d2120"
+      },
+      {
+        "section": 8,
+        "path": "experiments/src/skills/scienceworld/scienceworld-controlled-waiting/SKILL.md",
+        "url": "https://github.com/zjunlp/SkillNet/blob/358ec824577e8a5aa6857c0eff268e492703606b/experiments/src/skills/scienceworld/scienceworld-controlled-waiting/SKILL.md",
+        "vendored_original": "sources/skillnet/scienceworld/controlled-waiting.md",
+        "sha256": "a07ba58a5400860453b6b747112c6be403e8bfb2fa356b9798a019cdb430b00f"
+      }
+    ]
+  }
+}
