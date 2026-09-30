@@ -1,0 +1,43 @@
+{
+  "launch_configs": {
+    "alfworld": {
+      "validated": true,
+      "initial_skills": 6,
+      "gpus": 8,
+      "project": "etpo_alfworld"
+    },
+    "webshop": {
+      "validated": true,
+      "initial_skills": 1,
+      "gpus": 8,
+      "project": "etpo_webshop"
+    },
+    "sciworld": {
+      "validated": true,
+      "initial_skills": 1,
+      "gpus": 8,
+      "project": "etpo_sciworld"
+    }
+  },
+  "python_syntax": "passed",
+  "unit_tests": {
+    "count": 13,
+    "status": "passed",
+    "log": "logs/unit-tests.log"
+  },
+  "distributed_sft": {
+    "backend": "gloo",
+    "ranks": 2,
+    "padding_rank_has_zero_supervision": true,
+    "ranks_identical": true,
+    "max_difference_from_single_rank": 0.0,
+    "scope": "CPU DDP SFT normalization; GPU FSDP not tested"
+  },
+  "gpu_training": "not tested: no CUDA device visible in this container",
+  "publication_checks": {
+    "portable_activation": true,
+    "unit_tests_rerun": 13,
+    "no_machine_asset_symlinks_in_git": true,
+    "shell_syntax": "passed"
+  }
+}

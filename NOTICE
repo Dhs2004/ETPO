@@ -1,0 +1,14 @@
+SkillRise
+Copyright 2026 The SkillRise Authors
+
+This product includes software developed as part of the verl and verl-agent
+(GiGPO) projects, licensed under the Apache License, Version 2.0:
+  - verl: https://github.com/volcengine/verl
+  - verl-agent (GiGPO): https://github.com/langfengQ/verl-agent
+
+The bundled ScienceWorld, ALFWorld, and WebShop environment backends are the
+property of their respective authors and are used under their original licenses.
+
+ETPO extends the SkillRise codebase with reward-aligned self-distillation and shared-policy teacher SFT.
+Initial ALFWorld skills are adapted from SkillZero (https://github.com/ZJU-REAL/SkillZero),
+under Apache-2.0; see skills/SOURCES.md and skills/LICENSE.SkillZero.

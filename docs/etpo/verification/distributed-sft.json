@@ -1,0 +1,8 @@
+{
+  "backend": "gloo",
+  "ranks": 2,
+  "padding_rank_has_zero_supervision": true,
+  "ranks_identical": true,
+  "max_difference_from_single_rank": 0.0,
+  "scope": "CPU DDP SFT normalization; GPU FSDP not tested"
+}

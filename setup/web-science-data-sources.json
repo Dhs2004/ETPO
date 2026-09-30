@@ -1,0 +1,20 @@
+{
+  "data/webshop/items_human_ins.json": {
+    "bytes": 5137548,
+    "sha256": "cf78667548a71786e1d9049c24b802e48e1084ad4bb021cae56ce1f6d96954a3"
+  },
+  "data/webshop/items_ins_v2_1000.json": {
+    "bytes": 147099,
+    "sha256": "f88a36314a397b53b3d9c3fa5878e5f7b26d35019a51ec83fbedeca61a948f6f"
+  },
+  "data/webshop/items_shuffle_1000.json": {
+    "bytes": 4467013,
+    "sha256": "30a4765c3a327af72d9a9a95a6b2486d516f0fa1d3ecd83681901ce82a21b269"
+  },
+  "data/sciworld/variations_idx/L0_idx.json": {
+    "bytes": 260892,
+    "sha256": "151b8942dd58cba74d78115ea7a1cd5eb998cf9c112e51232cb1ef1c87630316"
+  },
+  "webshop_source": "https://huggingface.co/datasets/YWZBrandon/webshop-data (1000-product files matching the official script)",
+  "scienceworld_split_source": "https://raw.githubusercontent.com/ZJU-REAL/BEACON/main/agent_system/environments/env_package/sciworld/variations_idx/L0_idx.json"
+}
