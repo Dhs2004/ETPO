@@ -3,7 +3,7 @@ set -euo pipefail
 source "$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/../.." && pwd)/activate.sh"
 ENVIRONMENT="${1:-alfworld}"
 if [ "$#" -gt 0 ]; then shift; fi
-case "$ENVIRONMENT" in alfworld|webshop|sciworld) ;; *) echo 'Usage: train.sh {alfworld|webshop|sciworld} [Hydra overrides]' >&2; exit 2;; esac
+case "$ENVIRONMENT" in alfworld|webshop|sciworld|sokoban) ;; *) echo 'Usage: train.sh {alfworld|webshop|sciworld|sokoban} [Hydra overrides]' >&2; exit 2;; esac
 export ETPO_PROJECT_NAME="etpo_${ENVIRONMENT}"
 export ETPO_EXPERIMENT_NAME="${ETPO_EXPERIMENT_NAME:-etpo_${ENVIRONMENT}_qwen3-4b_$(date +%Y%m%d%H%M%S)}"
 # Pass --cfg job to validate without starting GPU work. Otherwise fail early.
@@ -14,7 +14,9 @@ done
 if [ "$ETPO_CONFIG_ONLY" = false ]; then
     python -c 'import torch; assert torch.cuda.is_available(), "No CUDA GPU visible; use a GPU-enabled container"'
 fi
-bash "examples/skillrise_${ENVIRONMENT}/skillrise_${ENVIRONMENT}_qwen3_4b.sh" vllm \
+ETPO_BACKEND_SCRIPT="examples/skillrise_${ENVIRONMENT}/skillrise_${ENVIRONMENT}_qwen3_4b.sh"
+if [ "$ENVIRONMENT" = sokoban ]; then ETPO_BACKEND_SCRIPT="examples/etpo/train_sokoban.sh"; fi
+bash "$ETPO_BACKEND_SCRIPT" vllm \
     etpo.enabled=true \
     "etpo.skill_root=$ETPO_ROOT/skills" \
     data.return_raw_chat=true data.truncation=error \

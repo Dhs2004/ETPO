@@ -1,0 +1,10 @@
+{
+  "train_levels": 192,
+  "validation_levels": 32,
+  "all_solved_in_gym": 224,
+  "symmetric_split_overlap": 0,
+  "solution_length_min": 4,
+  "solution_length_max": 26,
+  "solver": "test-only BFS, not an LLM evaluation",
+  "gpu_training": "not tested"
+}

@@ -1,6 +1,7 @@
 """Validate logs emitted by examples/etpo/train.sh ENV --cfg job."""
 import ast
 import json
+import re
 from pathlib import Path
 from omegaconf import OmegaConf
 from etpo.config import validate
@@ -8,7 +9,7 @@ from etpo.skills import SkillBank
 
 ROOT = Path(__file__).resolve().parents[2]
 results = {}
-for env in ('alfworld', 'webshop', 'sciworld'):
+for env in ('alfworld', 'webshop', 'sciworld', 'sokoban'):
     raw = (ROOT / f'logs/config-{env}.log').read_text()
     start = raw.index('\ndata:\n') + 1
     cfg = OmegaConf.create(raw[start:])
@@ -24,12 +25,17 @@ for env in ('alfworld', 'webshop', 'sciworld'):
     results[env] = {'validated': True, 'initial_skills': len(bank.skills),
                     'gpus': cfg.trainer.n_gpus_per_node,
                     'project': cfg.trainer.project_name}
-for directory in ('etpo', 'tests/etpo'):
+for directory in ('etpo', 'tests/etpo', 'agent_system/environments/skillrise_sokoban'):
     for path in (ROOT / directory).glob('*.py'):
         ast.parse(path.read_text(), filename=str(path))
+unit_log = (ROOT / 'logs/unit-tests.log').read_text()
+unit_summary = re.search(r'Ran (\d+) tests in [^\n]+\n\nOK\n', unit_log)
+if unit_summary is None:
+    raise ValueError('Unit log does not contain a passing unittest summary')
 report = {'launch_configs': results, 'python_syntax': 'passed',
-          'unit_tests': {'count': 13, 'status': 'passed', 'log': 'logs/unit-tests.log'},
+          'unit_tests': {'count': int(unit_summary.group(1)), 'status': 'passed', 'log': 'logs/unit-tests.log'},
           'distributed_sft': json.loads((ROOT / 'logs/distributed-sft.json').read_text()),
+          'sokoban_backend': json.loads((ROOT / 'logs/sokoban-backend.json').read_text()),
           'gpu_training': 'not tested: no CUDA device visible in this container'}
 (ROOT / 'logs/verification.json').write_text(json.dumps(report, indent=2) + '\n')
 print(json.dumps(report, indent=2))

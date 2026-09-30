@@ -326,6 +326,8 @@ env:
   # max_turns: 6
   ## sokoban-middle-high ##
   sokoban:
+    train_groups: ${oc.env:ETPO_ROOT,.}/data/groups/etpo_sokoban_train_K3.jsonl
+    val_groups: ${oc.env:ETPO_ROOT,.}/data/groups/etpo_sokoban_val.jsonl
     dim_room: [6, 6]
     num_boxes: 2
     search_depth: 100

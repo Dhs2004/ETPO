@@ -12,3 +12,7 @@ property of their respective authors and are used under their original licenses.
 ETPO extends the SkillRise codebase with reward-aligned self-distillation and shared-policy teacher SFT.
 Initial ALFWorld skills are adapted from SkillZero (https://github.com/ZJU-REAL/SkillZero),
 under Apache-2.0; see skills/SOURCES.md and skills/LICENSE.SkillZero.
+
+ETPO's Sokoban adapter uses gym-sokoban 0.0.6 (MIT), copyright 2018
+Max-Philipp Schrader. Its generated level split is verified offline; see
+skills/LICENSE.gym-sokoban and data/groups/README.sokoban.md.

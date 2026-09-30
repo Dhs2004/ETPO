@@ -181,7 +181,7 @@ bash examples/etpo/train.sh sciworld --cfg job
 
 关注 `etpo/successful_tasks`、`etpo/sft_tasks`、`etpo/sft_skipped`、`etpo/sft_loss`、`etpo/sft_grad_norm`、`etpo/retained_fraction`、`etpo/credit_mean`、`etpo/teacher_nonfinite_tokens`、`etpo/distill_loss`，并与 reward、成功率、`actor/pg_clipfrac` 和 `actor/ppo_kl` 联合判断。低保留率先检查教师概率分布，不应直接视为实现出错。
 
-目前只支持三个文本环境、FSDP/FSDP2 actor、sequence parallel=1、temperature=1、raw chat、禁止 prompt 截断；不支持独立教师、packed multi-turn、视觉输入。FSDP2 和 GPU FSDP 虽接入同一代码路径，尚未实测。
+目前支持 ALFWorld、WebShop、ScienceWorld、Sokoban 四个文本环境、FSDP/FSDP2 actor、sequence parallel=1、temperature=1、raw chat、禁止 prompt 截断；不支持独立教师、packed multi-turn、视觉输入。FSDP2 和 GPU FSDP 虽接入同一代码路径，尚未实测。
 
 ## 9. 验证记录与边界
 
@@ -197,3 +197,7 @@ torchrun --standalone --nnodes=1 --nproc_per_node=2 tests/etpo/distributed_sft_s
 三个环境的最终 Hydra 配置均成功解析，并通过 ETPO 参数、初始 skill、8 GPU、microbatch 和输出目录检查。汇总见 `logs/verification.json`；可在生成配置日志后运行 `python tests/etpo/validate_launch_configs.py` 重新校验。
 
 这些结果证明被测试的更新顺序、张量逻辑和 CPU 分布式归一化工作正常，不能替代 CUDA、FlashAttention、GPU FSDP、vLLM 权重同步、真实环境完整训练和分布式 checkpoint 的验证。当前容器无可用 GPU，因此没有训练收益、最终成功率或论文结果可报告。
+
+## 10. Sokoban 扩展
+
+Sokoban 已加入统一入口、SkillBank 和 TaskRunner 环境路由。环境规则、初始 skill 来源、固定关卡划分与验证见 [SOKOBAN.zh-CN.md](SOKOBAN.zh-CN.md)。前面的 13 项测试记录为首版基线，新增 Sokoban 后的完整测试为 19 项。

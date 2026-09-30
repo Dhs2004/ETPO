@@ -11,7 +11,7 @@ conda activate skillrise
 # 新机器先按 setup/README.md 配置并 source config.local.sh
 source activate.sh
 
-# 8 GPU；环境可替换为 webshop 或 sciworld
+# 8 GPU；环境可替换为 webshop、sciworld 或 sokoban
 WANDB_MODE=offline bash examples/etpo/train.sh alfworld
 
 # 只检查配置，不需要 GPU
@@ -22,7 +22,7 @@ ALFWorld 初始 skills 来自 SkillZero；WebShop、ScienceWorld 的通用 skill
 
 完整设计、损失公式、更新顺序、成功筛选、参数、消融与运行说明见 [ETPO 实现文档](docs/etpo/IMPLEMENTATION.zh-CN.md)。
 
-已通过 13 项 CPU 测试（含真实小型 Qwen3 参数更新）及双进程 CPU SFT 归一化验证。当前容器没有 GPU，尚未验证 8×L40 完整训练，也未复现论文指标。
+已通过 19 项 CPU 测试（含真实小型 Qwen3 参数更新）及双进程 CPU SFT 归一化验证。当前容器没有 GPU，尚未验证 8×L40 完整训练，也未复现论文指标。
 
 ```bash
 python -m unittest discover -s tests/etpo -p 'test_*.py' -v
@@ -32,3 +32,5 @@ torchrun --standalone --nnodes=1 --nproc_per_node=2 tests/etpo/distributed_sft_s
 上游代码保留原许可证与 NOTICE；SkillZero 内容许可证见 `skills/LICENSE.SkillZero`。
 
 配置入口：`verl/trainer/config/ppo_trainer.yaml`；路径示例：`setup/paths.example.sh`；依赖约束及版本快照：`setup/`；可随仓库查看的 [验证记录](docs/etpo/verification/verification.json)。模型、数据、环境目录和运行日志不上传。
+
+Sokoban 已接入同一训练入口：`bash examples/etpo/train.sh sokoban`。附带 192 个训练关卡、32 个验证关卡及教师初始技能；见 [Sokoban 使用说明](docs/etpo/SOKOBAN.zh-CN.md) 和 [其他项目 skill 来源核查](docs/etpo/SKILL-SOURCE-AUDIT.zh-CN.md)。

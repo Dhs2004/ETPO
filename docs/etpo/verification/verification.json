@@ -17,11 +17,17 @@
       "initial_skills": 1,
       "gpus": 8,
       "project": "etpo_sciworld"
+    },
+    "sokoban": {
+      "validated": true,
+      "initial_skills": 1,
+      "gpus": 8,
+      "project": "etpo_sokoban"
     }
   },
   "python_syntax": "passed",
   "unit_tests": {
-    "count": 13,
+    "count": 19,
     "status": "passed",
     "log": "logs/unit-tests.log"
   },
@@ -33,11 +39,15 @@
     "max_difference_from_single_rank": 0.0,
     "scope": "CPU DDP SFT normalization; GPU FSDP not tested"
   },
-  "gpu_training": "not tested: no CUDA device visible in this container",
-  "publication_checks": {
-    "portable_activation": true,
-    "unit_tests_rerun": 13,
-    "no_machine_asset_symlinks_in_git": true,
-    "shell_syntax": "passed"
-  }
+  "sokoban_backend": {
+    "train_levels": 192,
+    "validation_levels": 32,
+    "all_solved_in_gym": 224,
+    "symmetric_split_overlap": 0,
+    "solution_length_min": 4,
+    "solution_length_max": 26,
+    "solver": "test-only BFS, not an LLM evaluation",
+    "gpu_training": "not tested"
+  },
+  "gpu_training": "not tested: no CUDA device visible in this container"
 }

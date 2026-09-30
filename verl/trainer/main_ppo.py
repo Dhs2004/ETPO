@@ -69,6 +69,8 @@ class TaskRunner:
             from agent_system.environments.webshop.env_manager import make_envs
         elif 'skillrise_sciworld' in config.env.env_name.lower():
             from agent_system.environments.skillrise_sciworld import make_envs
+        elif 'skillrise_sokoban' in config.env.env_name.lower():
+            from agent_system.environments.skillrise_sokoban import make_envs
         elif 'sciworld' in config.env.env_name.lower():
             from agent_system.environments.sciworld import make_envs
         else:

@@ -6,11 +6,13 @@
 
 ```bash
 source activate.sh
-python -m unittest discover -s tests/etpo -p 'test_*.py' -v
 mkdir -p logs
+python -m unittest discover -s tests/etpo -p 'test_*.py' -v > logs/unit-tests.log 2>&1
 torchrun --standalone --nnodes=1 --nproc_per_node=2 tests/etpo/distributed_sft_smoke.py
-for task in alfworld webshop sciworld; do
+for task in alfworld webshop sciworld sokoban; do
   bash examples/etpo/train.sh "$task" --cfg job > "logs/config-$task.log" 2>&1
 done
 python tests/etpo/validate_launch_configs.py
 ```
+
+新增 Sokoban 后共 19 项测试通过；`sokoban-backend.json` 记录全部 224 个关卡在真实 gym-sokoban 中的执行验证，属于测试求解器结果。

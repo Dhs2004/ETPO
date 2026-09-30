@@ -81,3 +81,7 @@ bash examples/etpo/train.sh sciworld --cfg job
 ```
 
 8 GPU 启动、一步训练、消融和限制详见 [实现文档](../docs/etpo/IMPLEMENTATION.zh-CN.md)。验证快照位于 [docs/etpo/verification](../docs/etpo/verification/)；它记录本次 CPU 测试结果，不代表在新机器上执行过。真实 collector 测试需要 `SKILLRISE_MODEL_PATH` 下的 Qwen3 tokenizer，其余算法测试使用小模型。
+
+## Sokoban
+
+现有依赖已包含 `gym_sokoban==0.0.6`。Sokoban 不使用 Java 或上述外部数据，关卡随仓库提供。运行 `bash examples/etpo/train.sh sokoban`；细节见 [Sokoban 文档](../docs/etpo/SOKOBAN.zh-CN.md)。

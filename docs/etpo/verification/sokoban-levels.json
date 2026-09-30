@@ -1,0 +1,15 @@
+{
+  "generator": "gym-sokoban==0.0.6",
+  "seed": 20260930,
+  "room_shape": [
+    6,
+    6
+  ],
+  "num_boxes": 2,
+  "num_gen_steps": 25,
+  "split": "192 training / 32 validation, symmetric full-state deduplication",
+  "files": {
+    "data/groups/etpo_sokoban_train_K3.jsonl": "71a394db34897221f87b4d9928a891061114a3f022061c40f057e6f10f150858",
+    "data/groups/etpo_sokoban_val.jsonl": "a2db73a1cc4da6fd004465d94340527d672e4205f194a209a9ecd04db4b4cd4d"
+  }
+}

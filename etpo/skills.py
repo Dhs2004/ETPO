@@ -6,7 +6,7 @@ from pathlib import Path
 
 class SkillBank:
     def __init__(self, root, environment):
-        name = next((x for x in ('alfworld', 'webshop', 'sciworld') if x in environment.lower()), None)
+        name = next((x for x in ('alfworld', 'webshop', 'sciworld', 'sokoban') if x in environment.lower()), None)
         if name is None:
             raise ValueError(f'ETPO does not support environment {environment}')
         self.directory = Path(root).expanduser().resolve() / name
