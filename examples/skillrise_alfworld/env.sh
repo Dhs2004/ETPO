@@ -1,0 +1,29 @@
+#!/bin/bash
+# Environment configuration for SkillRise ALFWorld training.
+
+# ── WandB (export your own key before running, or set WANDB_MODE=offline) ──
+# WANDB_API_KEY is inherited from the secure launcher; do not expand it under shell tracing.
+
+# ── ALFWorld data (TextWorld game files, json_2.1.1/{train,valid_seen,...}) ──
+# Download via `alfworld-download` (from the alfworld package) and point this at it.
+export ALFWORLD_DATA="${ALFWORLD_DATA:-$HOME/data/alfworld}"
+
+# ── Runtime tuning ──
+export RAY_worker_register_timeout_seconds=600
+export VERL_LOGGING_LEVEL=INFO
+export HYDRA_FULL_ERROR=1
+export PYTHONUNBUFFERED=1
+export TORCH_NCCL_AVOID_RECORD_STREAMS="1"
+
+export OPENBLAS_NUM_THREADS=1
+export OMP_NUM_THREADS=1
+export MKL_NUM_THREADS=1
+export NUMEXPR_NUM_THREADS=1
+
+# Some containers put an unreadable /root/bin on PATH; flashinfer/tvm_ffi tries to
+# stat every PATH entry and dies with PermissionError. Drop it defensively.
+export PATH=$(echo "$PATH" | tr ':' '\n' | grep -v '^/root/bin$' | tr '\n' ':' | sed 's/:$//')
+export RAY_IGNORE_UNHANDLED_ERRORS=1
+
+# ── Policy model (path to a local HF checkpoint, e.g. Qwen3-4B) ──
+export SKILLRISE_MODEL_PATH="${SKILLRISE_MODEL_PATH:-/path/to/Qwen3-4B}"

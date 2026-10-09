@@ -1,0 +1,8 @@
+# Conda base; install Python packages as documented in setup/README.md.
+name: skillrise
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - openjdk=11
